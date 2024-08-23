@@ -1,53 +1,52 @@
-#include <iostream>
-#include <queue>
-#include <stdio.h>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
+
 int get(int x, int i) { return (x >> i) & 1; }
 void off(int x, int i) { x = x & (!(1 << i)); }
 void on(int x, int i) { x = x | (1 << i); }
+
 long long mu2[20], s, t;
-vector<int> visit, d;
+vector<int> Visit, d;
 queue<long long> q;
 char a;
 void up(int x, int i) {
   int v = x - mu2[16 - i] + mu2[16 - i - 4];
 
-  if (!visit[v]) {
+  if (!Visit[v]) {
     q.push(v);
     d[v] = d[x] + 1;
-    visit[v] = 1;
+    Visit[v] = 1;
   }
 }
 void down(int x, int i) {
   int v = x - mu2[16 - i] + mu2[16 - i + 4];
 
-  if (!visit[v]) {
+  if (!Visit[v]) {
     q.push(v);
     d[v] = d[x] + 1;
-    visit[v] = 1;
+    Visit[v] = 1;
   }
 }
 void left(int x, int i) {
   int v = x - mu2[16 - i] + mu2[16 - i - 1];
 
-  if (!visit[v]) {
+  if (!Visit[v]) {
     q.push(v);
     d[v] = d[x] + 1;
-    visit[v] = 1;
+    Visit[v] = 1;
   }
 }
 void right(int x, int i) {
   int v = x - mu2[16 - i] + mu2[16 - i + 1];
-  if (!visit[v]) {
+  if (!Visit[v]) {
     q.push(v);
     d[v] = d[x] + 1;
-    visit[v] = 1;
+    Visit[v] = 1;
   }
 }
 void bfs() {
   q.push(s);
-  visit[s] = 1;
+  Visit[s] = 1;
   while (!q.empty()) {
     long long p = q.front();
     if (p == t) {
@@ -74,7 +73,7 @@ int main() {
   mu2[16] = 1;
   for (int i = 15; i > 0; i--)
     mu2[i] = mu2[i + 1] * 2;
-  visit.assign(mu2[1] * 2 + 2, 0);
+  Visit.assign(mu2[1] * 2 + 2, 0);
   d.assign(mu2[1] * 2 + 2, 0);
 
   for (int i = 1; i <= 16; i++) {

@@ -14,7 +14,7 @@ const int dir[] = {0, -1, 0, 1, 0};
 int main() {
   cin.tie(nullptr)->sync_with_stdio(false);
   int t = 1;
-//   cin >> t;
+  //   cin >> t;
   while (t--) {
     int n, m;
     cin >> n >> m;

@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int mp[201][201];
 int n, m;
 int in[211], vis[211];
 int st[211], ans[211];
+
 void tp() {
   int top = 0;
   int tot = 0;
@@ -61,7 +63,7 @@ int main() {
         in[a]++;
       }
     }
-    
+
     tp();
   }
 }

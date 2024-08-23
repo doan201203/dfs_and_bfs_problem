@@ -1,13 +1,10 @@
 #include <bits/stdc++.h>
-#define PI acos(-1)
 using namespace std;
+
 typedef long long ll;
-typedef double db;
 const int maxn = 1e5 + 5;
-const int mod = 1e9 + 7;
 const int INF = 1e8 + 5;
 const ll inf = 1e15 + 5;
-const db eps = 1e-9;
 
 struct Edge {
   ll u, v, c;
@@ -150,11 +147,8 @@ void solve() {
 }
 
 int main() {
-  // cin.sync_with_stdio(false);
-  // freopen("tt.txt", "r", stdin);
-  // freopen("hh.txt", "w", stdout);
   int t = 1;
-//   cin >> t;
+  //   cin >> t;
 
   while (t--) {
     solve();
